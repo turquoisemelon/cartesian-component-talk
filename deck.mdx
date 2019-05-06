@@ -1,23 +1,48 @@
 import { Head, Notes } from 'mdx-deck'
 
-export { theme } from './theme'
+export { default as theme } from './theme'
 
 <Head>
-  <title>Presentation Title</title>
+  <title>Automating Component Variation Rendering</title>
 </Head>
 
-# Hello
+import { Credentials } from './components/Credentials'
+
+## Cartesian Component: Automating Component Variation Rendering
+
+<Credentials />
 
 ---
+import { SplitRight } from 'mdx-deck/layouts'
+import { ImageContainer } from './components/ImageContainer'
 
-## Edit this file
+### Design System
 
-To create your presentation
+<ImageContainer src='./images/ds.jpg' width='100%' />
 
 <Notes>
 Create speaker notes with the Notes component
 </Notes>
 
 ---
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import { Test } from 'Test.js'
 
-<https://github.com/jxnblk/mdx-deck>
+<Test>
+  <CodeSurfer
+    title="Some Title"
+    code={require("!raw-loader!./ButtonContainer.js").default}
+    lang="javascript"
+    size="large"
+    showNumbers={false}
+    dark={false}
+    steps={[
+      { notes: "Start with this note"},
+      { lines: [6], notes: "Note for the first step" },
+      { range: [5, 9] },
+      { tokens: { 9: [3, 4, 5] }, notes: "Note for the third step" }
+    ]}
+  />
+</Test>
+---
+

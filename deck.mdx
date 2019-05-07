@@ -16,7 +16,7 @@ import { Credentials } from './components/Credentials'
 import { SplitRight } from 'mdx-deck/layouts'
 import { ImageContainer } from './components/ImageContainer'
 
-### Design System
+### What is a Design System?
 
 <ImageContainer src='./images/ds.jpg' width='100%' />
 
@@ -25,24 +25,76 @@ Create speaker notes with the Notes component
 </Notes>
 
 ---
-import { CodeSurfer } from "mdx-deck-code-surfer"
-import { Test } from 'Test.js'
-
-<Test>
-  <CodeSurfer
-    title="Some Title"
-    code={require("!raw-loader!./ButtonContainer.js").default}
-    lang="javascript"
-    size="large"
-    showNumbers={false}
-    dark={false}
-    steps={[
-      { notes: "Start with this note"},
-      { lines: [6], notes: "Note for the first step" },
-      { range: [5, 9] },
-      { tokens: { 9: [3, 4, 5] }, notes: "Note for the third step" }
-    ]}
-  />
-</Test>
+<ImageContainer src='./images/ds-components.png' width='100%' />
 ---
+import { Split } from 'mdx-deck/layouts'
 
+export default Split
+
+<ImageContainer src='./images/render.png' width='100%' height="40rem" />
+
+## Component Variation
+## Rendering
+---
+import { CodeSurfer } from "mdx-deck-code-surfer"
+import duotoneLight from "prism-react-renderer/themes/duotoneLight"
+
+<CodeSurfer
+  title="Button"
+  code={require("!raw-loader!./ButtonContainer.js").default}
+  theme={duotoneLight}
+  lang="javascript"
+  size="large"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {}, // First step should be an overview of the snippet
+    { lines: [3, 4, 5], notes: "3 variations being primary" },
+    { lines: [15, 16, 17], notes: "Secondary" },
+    { lines: [27, 28, 29], notes: "Transactional" },
+    { range: [6, 8], notes: "Every button can also take an icon" },
+    { tokens: { 6: [5, 6, 7, 8, 9] }, notes: "Every button can also take an icon" },
+    { range: [9,11], notes: "Or a prop that makes it a smaller version of it"},
+    { tokens: { 9: [8] } },
+    { range: [12,14], notes: "A button can also be a small button and display an icon"},
+  ]}
+/>
+---
+<ImageContainer src='./images/components.png' width='40rem' height='48rem' />
+---
+export default Split
+
+<ImageContainer src='./images/descartes.jpg' width='28rem' height='34rem' />
+
+## Cartesian Component
+📐
+---
+<CodeSurfer
+  title="Button Cartesian"
+  code={require("!raw-loader!./ButtonCartesian.js").default}
+  theme={duotoneLight}
+  lang="javascript"
+  size="large"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {}, // First step should be an overview of the snippet
+    { lines: [3, 4, 5], notes: "3 variations being primary" },
+    { lines: [15, 16, 17], notes: "Secondary" },
+    { lines: [27, 28, 29], notes: "Transactional" },
+    { range: [6, 8], notes: "Every button can also take an icon" },
+    { tokens: { 6: [5, 6, 7, 8, 9] }, notes: "Every button can also take an icon" },
+    { range: [9,11], notes: "Or a prop that makes it a smaller version of it"},
+    { tokens: { 9: [8] } },
+    { range: [12,14], notes: "A button can also be a small button and display an icon"},
+  ]}
+/>
+---
+<ImageContainer src='./images/primary-with-props.png' width='30rem' height='38rem' />
+---
+A gif showing component variations from button container and cartesian side by side
+---
+Conclusions - Takeaways
+---
+Thank you
+---

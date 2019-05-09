@@ -12,29 +12,62 @@ import { Credentials } from './components/Credentials'
 
 <Credentials />
 
+<Notes>
+  Hi everyone. My name is Meltem. I work at here at Rangle, as a software developer. 
+  Today I’m going to talk about automating component variation rendering using Cartesian component and how it has helped my team here at Rangle to build a design system for a large e-commerce platform.
+</Notes>
+
 ---
-import { SplitRight } from 'mdx-deck/layouts'
-import { ImageContainer } from './components/ImageContainer'
-
-### What is a Design System?
-
-<ImageContainer src='./images/ds.jpg' width='100%' />
+## What is a design system?
+## 🤔
 
 <Notes>
-Create speaker notes with the Notes component
+  To start with, I’d like to briefly touch on what a design system is. 
+  How many of you heard of Design Systems before?
+  Are there any developers/designers who worked in a design system project before?
+  For those who already knows this stuff please bear with me, I just want to make sure everyone has
+  some context around Design Systems 
+</Notes>
+---
+import { ImageContainer } from './components/ImageContainer'
+import { DS } from './components/DS'
+
+<ImageContainer src='./images/ds.jpeg' width='100%' />
+
+<Notes>
+  A DS is a systematic approach to product development. 
+  It consists of tools, guidelines, shared principles and code which enables teams to work more efficiently and build consistent products in collaboration rather than in silos.
+  It's basically a single source of truth for all of the product teams
+  Probably the design system that a lot of developers are familiar with is the Material Design by Google.
+  Companies like AirBnb, Shopify, Github, IBM also have their own design systems.
 </Notes>
 
 ---
 <ImageContainer src='./images/ds-components.png' width='100%' />
+
+<Notes>
+  Design system typically has different parts to it. 
+  A shared design language which includes like brand colors, typography, spacing scale etc. 
+  Design/UI kit includes component symbols that designers across team would use to create consistent designs. 
+  Component library is where you have all your component code developed based on the design kit
+  Developer Sandbox is used to display, test and validate your components in isolation with their different variations without having to build entire pages
+  Documentation piece is as the name suggest the place where you document your design system and usage guidelines
+</Notes>
 ---
-import { Split } from 'mdx-deck/layouts'
-
-export default Split
-
-<ImageContainer src='./images/render.png' width='100%' height="40rem" />
-
 ## Component Variation
 ## Rendering
+
+<Notes>
+  Now that we've covered Design system specifics, you might be wondering how does component variation relates to all of that.
+</Notes>
+---
+<ImageContainer src='./images/render.png' width='100%' height="40rem" />
+
+<Notes>
+  As I previously mentioned component library in a design system includes all of your components like button, input field, checkbox etc.
+  In the process of building a component library, you'd often want to visualize how the growing number of components look in their different states and variations in your dev environment.
+  This helps the developers to build bug free and high quality UI as well as helps Quality analysts test them.
+</Notes>
 ---
 import { CodeSurfer } from "mdx-deck-code-surfer"
 import duotoneLight from "prism-react-renderer/themes/duotoneLight"
@@ -59,16 +92,41 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
     { range: [11, 13], notes: "A button can also be a small button and display an icon"},
   ]}
 />
+
+<Notes>
+  Let’s take button component as an example. Here I have different variations of the Button component
+  I've got variant prop which defines main colors and styles of the Button and it can be primary, secondary and transactional.
+  The button can also optionally have an icon and/or be a small button.
+</Notes>
 ---
 <ImageContainer src='./images/components.png' width='40rem' height='52rem' />
----
-export default Split
 
+<Notes>
+  If I wanted to visualize how my button looks in different combination of these props, I would need to write it once for every combination by hand.
+  Imagine, the situation where I wanted to add other properties to my button. 
+  This can quickly get out of hand. There’s probably a big maintenance overhead associated with writing all the components manually too. 
+  What happens if you have to update a prop? You'd need to update every instance manually. 
+  Sounds tedious. What if there’s a way to achieve the same result faster and by writing less code? 
+</Notes>
+---
 <ImageContainer src='./images/descartes.jpg' width='28rem' height='34rem' />
 
-## Cartesian Component
-📐
+<Notes>
+  A French mathematician named Rene Descartes comes to our rescue all the way from the 16. century!
+  He developed Cartesian coordinate system that gave rise to the Cartesian product concept which eventually gave rise to the Cartesian component. 
+</Notes>
 ---
+## Cartesian Component
+## 📐
+
+<Notes>
+  In the context of Math, Cartesian product is a mathematical operation that returns a product from multiple sets. This all we need to know
+  to understand Cartesian component magic.
+  It uses the same concept to generate and render the component for every possible combination of its properties that are passed in. 
+  This way you'd get your component displayed in its different variations without having to manually write it once for every possible combination of its props values.
+</Notes>
+---
+
 <CodeSurfer
   title="Button Cartesian"
   code={require("!raw-loader!./ButtonCartesian.js").default}
@@ -86,14 +144,56 @@ export default Split
 />
 
 <Notes>
-  Cartesian component generates and renders all the possible combinations of a component given a set of properties and potential values
+  Let’s see how that looks in the case of our Button component.Cartesian component takes in Button component and its props 
+  values as arrays and renders the component for every combination of these different property values. 
+  It achieves this by taking cartesian product of prop arrays under the hood.
+  Another cool feature of the cartesian component is that it lets you pass in a container that'll get wrapped around every rendered component.
+  Here, the container adds a list of props and their values for every variation of the component.
 </Notes>
 ---
-<ImageContainer src='./images/primary-with-props.png' width='30rem' height='38rem' />
+<ImageContainer src='./images/buttons-with-props.png' width='100%' />
 ---
-A gif showing component variations from button container and cartesian side by side
+![adding new prop to the cartesian component](https://cl.ly/d3b88ebaa62d/Screen%252520Recording%2525202019-05-08%252520at%25252002.44%252520PM.gif)
+
+<Notes>
+  I've recorded this quick gif to demonstrate how easy it is to render the component when a new prop is introduced
+  Let’s say I want to see how my buttons look when they are in the disabled state:
+  All I need to do is to add that prop to the button cartesian component along with the values I want it to take.
+  And then, boom I see how my button looks in disabled state in combination with other prop values
+</Notes>
 ---
-Conclusions - Takeaways
+<CodeSurfer
+  title="Cartesian component"
+  code={require("!raw-loader!./Cartesian.js").default}
+  theme={duotoneLight}
+  lang="javascript"
+  size="large"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {}, // First step should be an overview of the snippet
+    { range: [2, 23] },
+    { lines: [4] },
+    { range: [7, 22], },
+  ]}
+/>
+
+<Notes>
+
+</Notes>
 ---
-Thank you
+<ImageContainer src='./images/cartesian-axe.png' width='44rem' height='50rem' />
+
+<Notes>
+  Cartesian component has made component variation rendering a lot easier for us.
+  It has improved our component development work flow by saving us lots of time and lines of code. 
+  It has also saved us from all the burden and maintenance overhead that potentially comes with manual work.
+  This way we've been able to better focus on building right UI that fulfills all the project requirements. 
+
+  As a final note, other than component variation rendering, another thing that Cartesian component has actually helped us with is 
+  automating our accesibility aka axe testing. I won't go into detail in that as part of tonight's talk but I had to mention it for
+  this art work by Russell to meet with the audience
+</Notes>
 ---
+## 🙏🏻
+## Thank you! 

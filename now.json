@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "cartesian-component-talk",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}

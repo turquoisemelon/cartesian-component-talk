@@ -78,12 +78,12 @@ import { DS } from './components/DS'
 </Notes>
 ---
 import { CodeSurfer } from "mdx-deck-code-surfer"
-import duotoneLight from "prism-react-renderer/themes/duotoneLight"
+import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 
 <CodeSurfer
   title="Button"
   code={require("!raw-loader!./ButtonContainer.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -107,24 +107,14 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
   Sounds tedious. What if there’s a way to achieve the same result faster and by writing less code? 
 </Notes>
 ---
+## Cartesian Component 📐
+
 <ImageContainer src='./images/descartes.jpg' width='28rem' height='34rem' />
 
 <Notes>
   A French mathematician named Rene Descartes comes to our rescue all the way from the 16. century!
   He developed Cartesian coordinate system that gave rise to the Cartesian product concept which eventually gave rise to the Cartesian component. 
 </Notes>
----
-## Cartesian Product
-<ImageContainer src='./images/cartesian-products.jpg' width='100%' />
-
-<Notes>
-  In the context of Math, Cartesian product is a mathematical operation that returns a product from multiple sets. 
-  The cartesian product of two sets A and B here is equal to the set of all possible combinations of values from both sets.
-  This all we need to know to understand Cartesian component magic.
-</Notes>
----
-## Cartesian Component
-## 📐
 
 <Notes>
   It uses the same concept to generate and render the component for every possible combination of its properties that are passed in. 
@@ -135,7 +125,7 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 <CodeSurfer
   title="Button Cartesian"
   code={require("!raw-loader!./ButtonCartesian.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -169,10 +159,11 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
   And then, boom I see how my button looks in disabled state in combination with other prop values
 </Notes>
 ---
+<div style={{ display: 'flex' }}>
 <CodeSurfer
-  title="Cartesian component"
-  code={require("!raw-loader!./Cartesian.js").default}
-  theme={duotoneLight}
+  title="Cartesian Product"
+  code={require("!raw-loader!./CartesianProduct.js").default}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -184,17 +175,66 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
     { range: [7, 22], },
   ]}
 />
+</div>
 
 <Notes>
 
 </Notes>
+---
+<CodeSurfer
+  title="Cartesian component API"
+  code={require("!raw-loader!./Cartesian.js").default}
+  theme={shadesOfPurple}
+  lang="javascript"
+  size="large"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {}, // First step should be an overview of the snippet
+    { lines: [2] },
+    { lines: [4] },
+    { range: [7, 21] },
+  ]}
+/>
+
+<Notes>
+
+</Notes>
+---
+<CodeSurfer
+  title="Cartesian Product"
+  code={require("!raw-loader!./Cartesian.js").default}
+  theme={shadesOfPurple}
+  lang="javascript"
+  size="large"
+  showNumbers={false}
+  dark={false}
+  steps={[
+    {}, // First step should be an overview of the snippet
+    { range: [2, 23] },
+    { lines: [4] },
+    { range: [7, 22], },
+  ]}
+/>
+---
+## Cartesian Component & Storybook
+---
+## Useful Links
+
+* [Cartesian component](https://github.com/c8r/kit)
+* [Cartesian component in Vue] (https://codesandbox.io/s/github/e-schultz/vue-cartesian)
+* [Storybook-cartesian](https://github.com/jondot/storybook-cartesian)
+* [Axe-testing] (https://github.com/dequelabs/axe-core)
+---
+## 🙏🏻
+## Thank you! 
 ---
 ## Cartesian component in Testing
 ---
 <CodeSurfer
   title="Snapshot testing"
   code={require("!raw-loader!./snapshot.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -207,7 +247,7 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 <CodeSurfer
   title="Accesibility testing"
   code={require("!raw-loader!./axe.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -217,25 +257,3 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
     { range: [8, 9] },
   ]}
 />
----
-<ImageContainer src='./images/cartesian-axe.png' width='44rem' height='50rem' />
-
-<Notes>
-  Cartesian component has made component variation rendering a lot easier for us.
-  It has improved our component development work flow by saving us lots of time and lines of code. 
-  It has also saved us from all the burden and maintenance overhead that potentially comes with manual work.
-  This way we've been able to better focus on building right UI that fulfills all the project requirements. 
-
-  I just wanted show you this art work by teammate Russell to show you how Descart and Cartesian is a huge part of my team's culture at this point. 
-  We absolutely love it and I definitely recommend you to check it out as well
-</Notes>
----
-## Useful Links
-
-* [Cartesian component](https://github.com/c8r/kit)
-* [Cartesian component in Vue] (https://codesandbox.io/s/github/e-schultz/vue-cartesian)
-* [Storybook-cartesian](https://github.com/jondot/storybook-cartesian)
-* [Axe-testing] (https://github.com/dequelabs/axe-core)
----
-## 🙏🏻
-## Thank you! 

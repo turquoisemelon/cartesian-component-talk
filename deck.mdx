@@ -9,7 +9,7 @@ export { default as theme } from './theme'
 import { Credentials } from './components/Credentials'
 
 # Cartesian Component:
-# Automating Component Variation Rendering
+## Automating Component Variation Rendering
 
 <Credentials />
 
@@ -43,10 +43,15 @@ import { DS } from './components/DS'
   Tools, guidelines, shared principles and code
   Enables teams to work more efficiently and build consistent products in collaboration rather than in silos.
   A single source of truth for all of the product teams.
-  Material Design by Google.
-  Companies like AirBnb, Shopify, Github, IBM also have their own design systems.
 </Notes>
 
+---
+<ImageContainer src='./images/ds-examples.png' width='100%' />
+
+<Notes>
+  Material Design by Google.
+  Shopify - Polaris, Github - Primer, IBM - Carbon
+</Notes>
 ---
 <ImageContainer src='./images/ds-components.png' width='100%' creditLink="https://rangle.io/blog/what-is-a-design-system/" creditText="What is a Design System?"/>
 
@@ -58,8 +63,6 @@ import { DS } from './components/DS'
   Developer Sandbox is used to display, test and validate your components in isolation with their different variations without having to run the application.
   Documentation piece is as the name suggest the place where you document your design system and usage guidelines.
 </Notes>
----
-<ImageContainer src='./images/ds-examples.png' width='100%' />
 ---
 # Component Variation
 # Rendering
@@ -164,9 +167,9 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
   Let’s see how that looks in the case of our Button component.
   Cartesian component takes in Button component and its props values as arrays and renders the component for every combination of these different property values. 
   It achieves this by taking cartesian product of prop arrays under the hood.
-  Reduces the lines of codes, makes it so easy to update any prop value
+  Reduces the lines of codes, makes it so easy to update any prop value.
   One cool thing about using cartesian component is that: It shows you all the combinations of the props even the ones that you might not thinking to combine if you were to write them manually
-  Another feature we added to our evrsion of the cartesian component is that it lets you pass in a container that'll get wrapped around every rendered component.
+  Mention about the container that'll get wrapped around every rendered component.
   Here, the container adds a list of props and their values for every variation of the component.
 </Notes>
 ---
@@ -202,28 +205,6 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 
 </Notes>
 ---
-<div style={{ display: 'flex' }}>
-<CodeSurfer
-  title="Cartesian Product"
-  code={require("!raw-loader!./CartesianProduct.js").default}
-  theme={shadesOfPurple}
-  lang="javascript"
-  size="large"
-  showNumbers={false}
-  dark={false}
-  steps={[
-    {}, // First step should be an overview of the snippet
-    { range: [2, 23] },
-    { lines: [4] },
-    { range: [7, 22], },
-  ]}
-/>
-</div>
-
-<Notes>
-
-</Notes>
----
 # Cartesian Component in Testing
 # 🔎
 ---
@@ -239,6 +220,10 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
     {}, // First step should be an overview of the snippet
   ]}
 />
+
+<Notes>
+  Used to automate snapshot testing
+</Notes>
 ---
 <CodeSurfer
   title="Accesibility testing"
@@ -250,17 +235,20 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
   dark={false}
   steps={[
     {}, // First step should be an overview of the snippet
-    { range: [8, 9] },
   ]}
 />
+
+<Notes>
+  Axe to automate accessibility testing.
+  Automates the process of writing test cases for accesibility tests.
+</Notes>
 ---
 ## Useful Links
 
+* [What is a design system?](https://rangle.io/blog/what-is-a-design-system/)
 * [Cartesian component](https://github.com/c8r/kit/blob/master/core/src/Cartesian.js)
 * [Cartesian component in Vue](https://codesandbox.io/s/github/e-schultz/vue-cartesian)
 * [Cartesian product of props](https://github.com/c8r/kit/blob/master/core/src/util.js#L33)
-* [Cartesian product of multiple arrays](https://stackoverflow.com/questions/12303989/cartesian-product-of-multiple-arrays-in-javascript)
-* [Axe-testing] (https://github.com/dequelabs/axe-core)
 ---
 # 🙏🏻
 # Thank you!

@@ -8,19 +8,24 @@ export { default as theme } from './theme'
 
 import { Credentials } from './components/Credentials'
 
-## Cartesian Component: Automating Component Variation Rendering
+# Cartesian Component:
+## Automating Component Variation Rendering
 
 <Credentials />
 
 <Notes>
-  Introduce yourself
   Introduce the topic
   Mention how it helped your team to build a design system for a large e-commerce platform.
 </Notes>
 
 ---
-## What is a design system?
-## 🤔
+# Hi! I'm Meltem 👋
+##### 👩‍💻 Software Developer @ Rangle.io
+##### 🏠 Toronto, Canada 🇨🇦
+##### @trilingualmel
+---
+# What is a design system?
+# 🤔
 
 <Notes>
   To start with, briefly touch on what a design system is. 
@@ -31,31 +36,36 @@ import { Credentials } from './components/Credentials'
 import { ImageContainer } from './components/ImageContainer'
 import { DS } from './components/DS'
 
-<ImageContainer src='./images/ds.jpeg' width='100%' />
+<ImageContainer src='./images/ds.jpeg' width='100%' creditLink="https://uxdesign.cc/everything-you-need-to-know-about-design-systems" creditText="Everything you need to know about Design Systems" />
 
 <Notes>
   Systematic approach to product development. 
   Tools, guidelines, shared principles and code
   Enables teams to work more efficiently and build consistent products in collaboration rather than in silos.
-  A single source of truth for all of the product teams
-  Material Design by Google.
-  Companies like AirBnb, Shopify, Github, IBM also have their own design systems.
+  A single source of truth for all of the product teams.
 </Notes>
 
 ---
-<ImageContainer src='./images/ds-components.png' width='100%' />
+<ImageContainer src='./images/ds-examples.png' width='100%' />
+
+<Notes>
+  Material Design by Google.
+  Shopify - Polaris, Github - Primer, IBM - Carbon
+</Notes>
+---
+<ImageContainer src='./images/ds-components.png' width='100%' creditLink="https://rangle.io/blog/what-is-a-design-system/" creditText="What is a Design System?"/>
 
 <Notes>
   Design system typically has different parts to it. 
   A shared design language which includes like brand colors, typography, spacing scale etc. 
-  Design kit: assets for designers to use
-  Component library is where you have all your component code
-  Developer Sandbox is used to display, test and validate your components in isolation with their different variations without having to build entire pages
-  Documentation piece is as the name suggest the place where you document your design system and usage guidelines
+  Design kit: assets for designers to use when creating screens/pages for an application/product.
+  Component library is where you have all your component code aka building blocks of your application.
+  Developer Sandbox is used to display, test and validate your components in isolation with their different variations without having to run the application.
+  Documentation piece is as the name suggest the place where you document your design system and usage guidelines.
 </Notes>
 ---
-## Component Variation
-## Rendering
+# Component Variation
+# Rendering
 
 <Notes>
   Tie Ds to component variation rendering
@@ -65,25 +75,23 @@ import { DS } from './components/DS'
 <ImageContainer src='./images/components.png' width='40rem' height='52rem' />
 
 <Notes>
-  Recap on what a component library is.
-  Tie that to component variation rendering?
-  Why is it important?
-  As I previously mentioned component library in a design system includes all of your components like button, input field, checkbox etc.
+  Zooming into component library.
+  It includes all of the components like buttons input fields etc
   In the process of building a component library, you'd want to visualize how the growing number of components look in their different states and variations in the dev environment.
-  This HElps building bug free and high quality UI 
+  This HElps developers building high quality UI that meets the requirements
   Helps with testing
 
   Talk about button component's different variations, different props it takes in
-  Normally Manual rendering, Go to the next slide to show that in code. Mention disadvantages 
+  Normally Manual rendering, Go to the next slide to show that in code 
 </Notes>
 ---
 import { CodeSurfer } from "mdx-deck-code-surfer"
-import duotoneLight from "prism-react-renderer/themes/duotoneLight"
+import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 
 <CodeSurfer
   title="Button"
   code={require("!raw-loader!./ButtonContainer.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -96,8 +104,8 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
     { range: [5, 7], notes: "Every button can also take an icon" },
     { tokens: { 5: [5, 6, 7, 8, 9] }, notes: "Every button can also take an icon" },
     { range: [8, 10], notes: "Or a prop that makes it a smaller version of it"},
-    { tokens: { 8: [8] } },
     { range: [11, 13], notes: "A button can also be a small button and display an icon"},
+    {}
   ]}
 />
 
@@ -111,20 +119,25 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 
 <Notes>
   A French mathematician named Rene Descartes comes to our rescue all the way from the 16. century!
-  He developed Cartesian coordinate system that gave rise to the Cartesian product concept which eventually gave rise to the Cartesian component. 
+  He developed Cartesian product concept.
 </Notes>
 ---
 ## Cartesian Product
 <ImageContainer src='./images/cartesian-products.jpg' width='100%' />
 
 <Notes>
-  In the context of Math, Cartesian product is a mathematical operation that returns a product from multiple sets. 
-  The cartesian product of two sets A and B here is equal to the set of all possible combinations of values from both sets.
-  This all we need to know to understand Cartesian component magic.
+  In the context of Math, Cartesian product is an operation that returns a product from multiple sets.
+  The end result will include every possible combination of the values that exist within each set.
 </Notes>
 ---
-## Cartesian Component
-## 📐
+<ImageContainer src='./images/props-cartesian-product.png' width='100%' />
+
+<Notes>
+  Apply the same concept to the component props.
+</Notes>
+---
+# Cartesian Component
+# 📐
 
 <Notes>
   It uses the same concept to generate and render the component for every possible combination of its properties that are passed in. 
@@ -135,16 +148,18 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 <CodeSurfer
   title="Button Cartesian"
   code={require("!raw-loader!./ButtonCartesian.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
   dark={false}
   steps={[
     {}, // First step should be an overview of the snippet
-    { range: [3, 11] },
+    { range: [3, 10] },
     { lines: [5], },
-    { range: [6, 10] },
+    { lines: [6], },
+    { range: [7, 10] },
+    { lines: [4], },
   ]}
 />
 
@@ -152,9 +167,9 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
   Let’s see how that looks in the case of our Button component.
   Cartesian component takes in Button component and its props values as arrays and renders the component for every combination of these different property values. 
   It achieves this by taking cartesian product of prop arrays under the hood.
-  Reduces the lines of codes, makes it so easy to update any prop value
+  Reduces the lines of codes, makes it so easy to update any prop value.
   One cool thing about using cartesian component is that: It shows you all the combinations of the props even the ones that you might not thinking to combine if you were to write them manually
-  Another feature we added to our evrsion of the cartesian component is that it lets you pass in a container that'll get wrapped around every rendered component.
+  Mention about the container that'll get wrapped around every rendered component.
   Here, the container adds a list of props and their values for every variation of the component.
 </Notes>
 ---
@@ -170,18 +185,19 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 </Notes>
 ---
 <CodeSurfer
-  title="Cartesian component"
+  title="Cartesian component API"
   code={require("!raw-loader!./Cartesian.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
   dark={false}
   steps={[
     {}, // First step should be an overview of the snippet
-    { range: [2, 23] },
+    { lines: [1] },
+    { lines: [2] },
     { lines: [4] },
-    { range: [7, 22], },
+    { range: [7, 21] },
   ]}
 />
 
@@ -189,12 +205,13 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
 
 </Notes>
 ---
-## Cartesian component in Testing
+# Cartesian Component in Testing
+# 🔎
 ---
 <CodeSurfer
   title="Snapshot testing"
   code={require("!raw-loader!./snapshot.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -203,39 +220,37 @@ import duotoneLight from "prism-react-renderer/themes/duotoneLight"
     {}, // First step should be an overview of the snippet
   ]}
 />
+
+<Notes>
+  Used to automate snapshot testing
+</Notes>
 ---
 <CodeSurfer
   title="Accesibility testing"
   code={require("!raw-loader!./axe.js").default}
-  theme={duotoneLight}
+  theme={shadesOfPurple}
   lang="javascript"
   size="large"
   showNumbers={false}
   dark={false}
   steps={[
     {}, // First step should be an overview of the snippet
-    { range: [8, 9] },
   ]}
 />
----
-<ImageContainer src='./images/cartesian-axe.png' width='44rem' height='50rem' />
 
 <Notes>
-  Cartesian component has made component variation rendering a lot easier for us.
-  It has improved our component development work flow by saving us lots of time and lines of code. 
-  It has also saved us from all the burden and maintenance overhead that potentially comes with manual work.
-  This way we've been able to better focus on building right UI that fulfills all the project requirements. 
-
-  I just wanted show you this art work by teammate Russell to show you how Descart and Cartesian is a huge part of my team's culture at this point. 
-  We absolutely love it and I definitely recommend you to check it out as well
+  Axe to automate accessibility testing.
+  Automates the process of writing test cases for accesibility tests.
 </Notes>
 ---
 ## Useful Links
 
-* [Cartesian component](https://github.com/c8r/kit)
-* [Cartesian component in Vue] (https://codesandbox.io/s/github/e-schultz/vue-cartesian)
-* [Storybook-cartesian](https://github.com/jondot/storybook-cartesian)
-* [Axe-testing] (https://github.com/dequelabs/axe-core)
+* [What is a design system?](https://rangle.io/blog/what-is-a-design-system/)
+* [Cartesian component](https://github.com/c8r/kit/blob/master/core/src/Cartesian.js)
+* [Cartesian component in Vue](https://codesandbox.io/s/github/e-schultz/vue-cartesian)
+* [Cartesian product of props](https://github.com/c8r/kit/blob/master/core/src/util.js#L33)
 ---
-## 🙏🏻
-## Thank you! 
+# 🙏🏻
+# Thank you!
+### @trilingualmel
+---

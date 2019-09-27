@@ -42,30 +42,26 @@ import { DS } from './components/DS'
   Systematic approach to product development. 
   Tools, guidelines, shared principles and code
   Enables teams to work more efficiently and build consistent products in collaboration rather than in silos.
-  A single source of truth for all of the product teams.
+  A single source of truth for all of the product teams. It's fundamental purpose is to facilitate the work of different teams by preventing them to design and build same things.
 </Notes>
 
+---
+<ImageContainer src='./images/ds-components.png' width='100%' creditLink="https://rangle.io/blog/what-is-a-design-system/" creditText="What is a Design System?"/>
+
+<Notes>
+  Design language: the overall visual design of a digital product.
+  Defines characteristics such as typography, colors, icons, spacing and so on. Maintained as Design Tokens in code. 
+  Design kit: A library of shared styles, symbols or components that can be used by product teams to design or prototype new experiences. Symbols maps to JavaScript components from the component library. The mapping might not always be a direct one but they always need to be kept in sync.
+  Component library: a set of JavaScript components that are version controlled and can be composed to build applications and products.
+  Developer Sandbox: a tool for DS developers. Used to develop components in isolation, document use cases and write tests  without having to run the entire application.
+  Documentation: guidelines on how to consume the DS, design language, design and dev considerations and detailed documentation for each component.
+</Notes>
 ---
 <ImageContainer src='./images/ds-examples.png' width='100%' />
 
 <Notes>
   Material Design by Google.
   Shopify - Polaris, Github - Primer, IBM - Carbon
-</Notes>
----
-<ImageContainer src='./images/ds-components.png' width='100%' creditLink="https://rangle.io/blog/what-is-a-design-system/" creditText="What is a Design System?"/>
-
-<Notes>
-  Design system typically has different parts to it. 
-  Design language represents the overall visual design of a digital product.
-  This defines characteristics such as typography, colors, icons, spacing and so on. It is maintained as Design Tokens in code. 
-  Design kit: A library of shared styles, symbols or components that can be used by product teams to design or prototype new experiences. Symbols maps to JavaScript components from the component library. The mapping might not always be a direct one but they always need to be kept in sync.
-  Component library is a set of JavaScript components that are version controlled and can be composed to build
-  applications and products.
-  Developer Sandbox: a tool for Design system developers. Is used to develop components in isolation,
-  document use cases and write tests  without having to run the entire application.
-  Documentation: guidelines on how to consume the Design System, design language, design and dev 
-  considerations and detailed documentation for each component.
 </Notes>
 ---
 # Component Variation
@@ -253,6 +249,17 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 * [Cartesian component](https://github.com/c8r/kit/blob/master/core/src/Cartesian.js)
 * [Cartesian component in Vue](https://codesandbox.io/s/github/e-schultz/vue-cartesian)
 * [Cartesian product of props](https://github.com/c8r/kit/blob/master/core/src/util.js#L33)
+
+
+<Notes>
+  Last words before wrapping up. Benefits of Cartesian Component approach:
+  Improves development process by helping to visualize how every component looks in its different variations
+  Provided Instant feedback. Shorten the cycle between code tweaking to visual output
+  being able to see everything at the same time, whether things are broken or not 
+  Helps QA team to test the components in the dev sandbox
+  lightweight - just a component - doesn't include extra dependencies or configuration
+  Hope this has given you a bit of inspiration to take this concept and apply it to a similar problem you're tackling in your everyday workflow or on your side projects
+</Notes>
 ---
 # 🙏🏻
 # Thank you!

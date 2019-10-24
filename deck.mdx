@@ -14,7 +14,7 @@ import { Credentials } from './components/Credentials'
 <Credentials />
 
 <Notes>
-  Introduce the topic
+  Introduce yourself and the topic
   Mention how it helped your team to build a design system for a large e-commerce platform.
 </Notes>
 
@@ -26,8 +26,8 @@ import { Credentials } from './components/Credentials'
 
 <Notes>
   To start with, briefly touch on what a design system is. 
-  Ask if anyone heard of Design Systems before
-  Ask if there Are there anyone who worked in a ds project before
+  Ask who has heard of Design Systems before
+  Ask if there is anyone who worked in a ds project before
 </Notes>
 ---
 import { ImageContainer } from './components/ImageContainer'
@@ -59,7 +59,7 @@ import { DS } from './components/DS'
   Design kit: A library of shared styles, symbols or components that can be used by product teams to design or prototype new experiences. Symbols maps to JavaScript components from the component library. The mapping might not always be a direct one but they always need to be kept in sync.
   Component library is a set of JavaScript components that are version controlled and can be composed to build
   applications and products.
-  Developer Sandbox: a tool for Design system developers. Is used to develop components in isolation,
+  Developer Sandbox: a tool for Design system developers. Is used to develop and visualize components in isolation,
   document use cases and write tests  without having to run the entire application.
   Documentation: guidelines on how to consume the Design System, design language, design and dev 
   considerations and detailed documentation for each component.
@@ -87,12 +87,12 @@ import { DS } from './components/DS'
 </Notes>
 ---
 import { CodeSurfer } from "mdx-deck-code-surfer"
-import duotoneDark from "prism-react-renderer/themes/duotoneDark"
+import dracula from "prism-react-renderer/themes/dracula"
 
 <CodeSurfer
   title="Button"
   code={require("!raw-loader!./ButtonContainer.js").default}
-  theme={duotoneDark}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -151,7 +151,7 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
 <CodeSurfer
   title="Button Cartesian"
   code={require("!raw-loader!./ButtonCartesian.js").default}
-  theme={duotoneDark}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -190,7 +190,7 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
 <CodeSurfer
   title="Cartesian component API"
   code={require("!raw-loader!./Cartesian.js").default}
-  theme={duotoneDark}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -214,7 +214,7 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
 <CodeSurfer
   title="Snapshot testing"
   code={require("!raw-loader!./snapshot.js").default}
-  theme={duotoneDark}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -231,7 +231,7 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
 <CodeSurfer
   title="Accesibility testing"
   code={require("!raw-loader!./axe.js").default}
-  theme={duotoneDark}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -246,6 +246,13 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
   Automates the process of writing test cases for accesibility tests.
 </Notes>
 ---
+## Cartesian Product + Component = 🎩❤️💪🏻🙆🏻‍♀
+
+<Notes>
+  Mention why cartesian component is cool: Improves developers workflow, instant feedback, lightweight - just a component - doesn't include extra dependencies or configuration, being able to see all the components and variations at the same, whether things are broken or not,
+good for QA
+</Notes>
+---
 ## Useful Links
 
 * [What is a design system?](https://rangle.io/blog/what-is-a-design-system/)
@@ -256,4 +263,3 @@ import duotoneDark from "prism-react-renderer/themes/duotoneDark"
 # 🙏🏻
 # Thank you!
 ### @trilingualmel
----

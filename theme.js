@@ -1,18 +1,14 @@
-import theme from 'mdx-deck/themes'
+import { dark } from 'mdx-deck/themes'
 
 export default {
-  ...theme,
+  ...dark,
   h1: {
-    color: '#c8300d',
     margin: '18px 0'
   },
   h2: {
-    color: '#c8300d',
     margin: '18px 0'
   },
-  h3: {
-    color: '#c8300d'
-  },
+  h3: {},
   h5: {
     margin: '8px 0'
   }

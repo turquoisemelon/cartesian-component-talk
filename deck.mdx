@@ -3,34 +3,31 @@ import { Head, Notes } from 'mdx-deck'
 export { default as theme } from './theme'
 
 <Head>
-  <title>Automating Component Variation Rendering</title>
+  <title>How a 16th Century French Mathematician Helped Build a Design System</title>
 </Head>
 
 import { Credentials } from './components/Credentials'
 
-# Cartesian Component:
-## Automating Component Variation Rendering
+## How a 16th Century Mathematician
+## Helped Build a Design System
 
 <Credentials />
 
 <Notes>
-  Introduce the topic
+  Introduce yourself and the topic
   Mention how it helped your team to build a design system for a large e-commerce platform.
 </Notes>
 
 ---
-# Hi! I'm Meltem 👋
-##### 👩‍💻 Software Developer @ Rangle.io
-##### 🏠 Toronto, Canada 🇨🇦
-##### @trilingualmel
+<ImageContainer src='./images/about.png' width='100%' />
 ---
 # What is a design system?
 # 🤔
 
 <Notes>
   To start with, briefly touch on what a design system is. 
-  Ask if anyone heard of Design Systems before
-  Ask if there Are there anyone who worked in a ds project before
+  Ask who has heard of Design Systems before
+  Ask if there is anyone who worked in a ds project before
 </Notes>
 ---
 import { ImageContainer } from './components/ImageContainer'
@@ -62,7 +59,7 @@ import { DS } from './components/DS'
   Design kit: A library of shared styles, symbols or components that can be used by product teams to design or prototype new experiences. Symbols maps to JavaScript components from the component library. The mapping might not always be a direct one but they always need to be kept in sync.
   Component library is a set of JavaScript components that are version controlled and can be composed to build
   applications and products.
-  Developer Sandbox: a tool for Design system developers. Is used to develop components in isolation,
+  Developer Sandbox: a tool for Design system developers. Is used to develop and visualize components in isolation,
   document use cases and write tests  without having to run the entire application.
   Documentation: guidelines on how to consume the Design System, design language, design and dev 
   considerations and detailed documentation for each component.
@@ -82,7 +79,7 @@ import { DS } from './components/DS'
   Zooming into component library.
   It includes all of the components like buttons input fields etc
   In the process of building a component library, you'd want to visualize how the growing number of components look in their different states and variations in the dev environment.
-  This HElps developers building high quality UI that meets the requirements
+  This Helps developers building high quality UI that meets the requirements
   Helps with testing
 
   Talk about button component's different variations, different props it takes in
@@ -90,12 +87,12 @@ import { DS } from './components/DS'
 </Notes>
 ---
 import { CodeSurfer } from "mdx-deck-code-surfer"
-import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
+import dracula from "prism-react-renderer/themes/dracula"
 
 <CodeSurfer
   title="Button"
   code={require("!raw-loader!./ButtonContainer.js").default}
-  theme={shadesOfPurple}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -121,13 +118,15 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 ---
 <ImageContainer src='./images/descartes.jpg' width='28rem' height='34rem' />
 
+### René Descartes
+
 <Notes>
   A French mathematician named Rene Descartes comes to our rescue all the way from the 16. century!
   He developed Cartesian product concept.
 </Notes>
 ---
 ## Cartesian Product
-<ImageContainer src='./images/cartesian-products.jpg' width='100%' />
+<ImageContainer src='./images/cartesian-product.png' width='75%' />
 
 <Notes>
   In the context of Math, Cartesian product is an operation that returns a product from multiple sets.
@@ -152,7 +151,7 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 <CodeSurfer
   title="Button Cartesian"
   code={require("!raw-loader!./ButtonCartesian.js").default}
-  theme={shadesOfPurple}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -191,7 +190,7 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 <CodeSurfer
   title="Cartesian component API"
   code={require("!raw-loader!./Cartesian.js").default}
-  theme={shadesOfPurple}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -215,7 +214,7 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 <CodeSurfer
   title="Snapshot testing"
   code={require("!raw-loader!./snapshot.js").default}
-  theme={shadesOfPurple}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -232,7 +231,7 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 <CodeSurfer
   title="Accesibility testing"
   code={require("!raw-loader!./axe.js").default}
-  theme={shadesOfPurple}
+  theme={dracula}
   lang="javascript"
   size="large"
   showNumbers={false}
@@ -247,6 +246,13 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
   Automates the process of writing test cases for accesibility tests.
 </Notes>
 ---
+## Cartesian Product + Component = 🎩❤️💪🏻🙆🏻‍♀
+
+<Notes>
+  Mention why cartesian component is cool: Improves developers workflow, instant feedback, lightweight - just a component - doesn't include extra dependencies or configuration, being able to see all the components and variations at the same, whether things are broken or not,
+good for QA
+</Notes>
+---
 ## Useful Links
 
 * [What is a design system?](https://rangle.io/blog/what-is-a-design-system/)
@@ -257,4 +263,3 @@ import shadesOfPurple from "prism-react-renderer/themes/shadesOfPurple"
 # 🙏🏻
 # Thank you!
 ### @trilingualmel
----

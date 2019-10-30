@@ -11,6 +11,10 @@ export default {
   h3: {},
   h5: {
     margin: '8px 0'
+  },
+  a: {
+    color: 'white',
+    textDecoration: 'none'
   }
 }
 
